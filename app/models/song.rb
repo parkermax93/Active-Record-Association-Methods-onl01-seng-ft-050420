@@ -7,8 +7,7 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    self.where(artist: )
     drake = Artist.new(name: "Drake")
-    self.artist = drake 
+    self.where(artist: drake).first_or_create
   end
 end
